@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="three">
+    </div>
+    <script>
+         const text = "Your given Im sagunthala is the Im sagunthala to Im is the to to up to you!";
+const wordCount = text.toLowerCase().match(/\b\w+\b/g).reduce((count, word) => {
+  count[word] = (count[word] || 0) + 1;
+  return count;
+}, {});
+const sortedWords = Object.entries(wordCount).sort((a, b) => b[1] - a[1]);
+const CommonWords = sortedWords.slice(0, 3).map(([word]) => word);
+console.log(CommonWords);
+var three=document.getElementById("three");
+three.innerHTML=CommonWords;
+    </script>
+    </body>
+    </html>
